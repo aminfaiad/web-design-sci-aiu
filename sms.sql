@@ -12,21 +12,17 @@ CREATE TABLE `lecturers` (
     `lecturer_id` varchar(50) NOT NULL,
     `username` varchar(50) NOT NULL,
     `password` varchar(20) NOT NULL,
-    `email` varchar(100) NOT NULL,
-    `phone` varchar(15) NOT NULL DEFAULT 'N/A',
     `fullname` varchar(255) DEFAULT NULL,
-    `address` varchar(255) NOT NULL,
-    `profile_picture` varchar(255) DEFAULT NULL,
     PRIMARY KEY (`lecturer_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Insert data into `lecturers`
-INSERT INTO `lecturers` (`lecturer_id`, `username`, `password`, `email`, `phone`, `fullname`, `address`, `profile_picture`) VALUES
-('AIU2210', 'abubakar', 'abu123', 'abubakar@example.com', '0123456788', 'Mr Abu Bakar', '321 Academic Rd', 'uploads/profile_pictures/abu.jpg'),
-('AIU2211', 'nadiah', 'nadiah123', 'nadiah@example.com', '0112233446', 'Madam Nadiah', '654 Education Blvd', 'uploads/profile_pictures/nadiah.jpg'),
-('AIU2212', 'james', 'james123', 'james@example.com', '0103344556', 'Dr James Smith', '789 Knowledge Ave', 'uploads/profile_pictures/james.jpg'),
-('AIU2213', 'lisa', 'lisa123', 'lisa@example.com', '0192233445', 'Dr Lisa Wong', '567 Research Rd', 'uploads/profile_pictures/lisa.jpg'),
-('AIU2214', 'omar', 'omar123', 'omar@example.com', '0189988776', 'Prof Omar Al-Bashir', '890 Academic Ln', 'uploads/profile_pictures/omar.jpg');
+INSERT INTO `lecturers` (`lecturer_id`, `username`, `password`, `fullname`) VALUES
+('AIU2210', 'abubakar', 'abu123', 'Mr Abu Bakar'),
+('AIU2211', 'nadiah', 'nadiah123', 'Madam Nadiah'),
+('AIU2212', 'james', 'james123', 'Dr James Smith'),
+('AIU2213', 'lisa', 'lisa123', 'Dr Lisa Wong'),
+('AIU2214', 'omar', 'omar123', 'Prof Omar Al-Bashir');
 
 -- Table structure for table `courses`
 CREATE TABLE `courses` (
@@ -84,25 +80,25 @@ CREATE TABLE `students` (
     `student_id` varchar(50) NOT NULL,
     `username` varchar(50) NOT NULL,
     `password` varchar(20) NOT NULL,
-    `email` varchar(100) NOT NULL,
-    `phone` varchar(20) DEFAULT NULL,
+    #`email` varchar(100) NOT NULL,
+    #`phone` varchar(20) DEFAULT NULL,
     `fullname` varchar(255) DEFAULT NULL,
-    `address` varchar(100) NOT NULL,
+    #`address` varchar(100) NOT NULL,
     PRIMARY KEY (`student_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Insert data into `students`
-INSERT INTO `students` (`student_id`, `username`, `password`, `email`, `phone`, `fullname`, `address`) VALUES
-('AIU22102232', 'fathi', 'fathi123', 'fathi@example.com', '0123456789', 'Fathi Mohammed', '123 Main St'),
-('AIU22104567', 'ali', 'ali123', 'ali@example.com', '0112233445', 'Ali Bin Ahmad', '456 Secondary St'),
-('AIU22107890', 'sarah', 'sarah123', 'sarah@example.com', '0109876543', 'Sarah Binti Zain', '789 Tertiary St'),
-('AIU22101234', 'ahmad1', 'ahmad123', 'ahmad1@example.com', '0101234561', 'Ahmad Bin Ali', '101 Main St'),
-('AIU22101235', 'noraini2', 'noraini123', 'noraini2@example.com', '0102345672', 'Noraini Binti Zulkifli', '102 Main St'),
-('AIU22101236', 'hafiz3', 'hafiz123', 'hafiz3@example.com', '0103456783', 'Hafiz Bin Osman', '103 Main St'),
-('AIU22101237', 'izzah4', 'izzah123', 'izzah4@example.com', '0104567894', 'Izzah Binti Rahman', '104 Main St'),
-('AIU22101238', 'farhan5', 'farhan123', 'farhan5@example.com', '0105678905', 'Farhan Bin Khalid', '105 Main St'),
-('AIU22101239', 'syafiq6', 'syafiq123', 'syafiq6@example.com', '0106789016', 'Syafiq Bin Hassan', '106 Main St'),
-('AIU22101240', 'nabila7', 'nabila123', 'nabila7@example.com', '0107890127', 'Nabila Binti Yusuf', '107 Main St');
+INSERT INTO `students` (`student_id`, `username`, `password`, `fullname`) VALUES
+('AIU22102232', 'fathi', 'fathi123', 'Fathi Mohammed'),
+('AIU22104567', 'ali', 'ali123', 'Ali Bin Ahmad'),
+('AIU22107890', 'sarah', 'sarah123', 'Sarah Binti Zain'),
+('AIU22101234', 'ahmad1', 'ahmad123', 'Ahmad Bin Ali'),
+('AIU22101235', 'noraini2', 'noraini123', 'Noraini Binti Zulkifli'),
+('AIU22101236', 'hafiz3', 'hafiz123', 'Hafiz Bin Osman'),
+('AIU22101237', 'izzah4', 'izzah123', 'Izzah Binti Rahman'),
+('AIU22101238', 'farhan5', 'farhan123', 'Farhan Bin Khalid'),
+('AIU22101239', 'syafiq6', 'syafiq123', 'Syafiq Bin Hassan'),
+('AIU22101240', 'nabila7', 'nabila123',  'Nabila Binti Yusuf');
 
 
 -- Table structure for table `course_registrations`
@@ -135,13 +131,13 @@ INSERT INTO `course_registrations` (`student_id`, `semester_course_id`, `status`
 
 -- Ahmad in Semester 1
 ('AIU22101234', 1, 'Approved'),
-('AIU22101234', 2, 'Approved'),
+('AIU22101234', 4, 'Approved'),
 ('AIU22101234', 3, 'Approved'),
 
 -- Noraini in Semester 2
 ('AIU22101235', 4, 'Approved'),
 ('AIU22101235', 5, 'Approved'),
-('AIU22101235', 6, 'Approved'),
+('AIU22101235', 7, 'Approved'),
 
 -- Hafiz in Semester 3
 ('AIU22101236', 7, 'Approved'),
@@ -161,7 +157,7 @@ INSERT INTO `course_registrations` (`student_id`, `semester_course_id`, `status`
 -- Syafiq in Semester 3
 ('AIU22101239', 7, 'Approved'),
 ('AIU22101239', 8, 'Approved'),
-('AIU22101239', 9, 'Approved'),
+('AIU22101239', 3, 'Approved'),
 
 -- Nabila in Semester 1
 ('AIU22101240', 1, 'Approved'),
@@ -216,6 +212,7 @@ CREATE TABLE `attendance` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 ALTER TABLE attendance ADD CONSTRAINT unique_attendance UNIQUE (class_id, student_id);
+ALTER TABLE student_marks ADD CONSTRAINT unique_marks UNIQUE (student_id, course_id);
 
 -- Insert sample attendance data
 INSERT INTO `attendance` (`class_id`, `student_id`, `status`) VALUES
